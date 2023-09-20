@@ -52,3 +52,21 @@ public class Solution {
         bufferedReader.close();
     }
 }
+
+
+        /*Solution:-
+        meal_cost: 12.00
+        tip_percent: 20
+        tax_percent: 8
+        
+        tip=(tip_percent*meal_cost)/100;
+        tax=(tax_percent*meal_cost)/100;
+        total_cost=tip+tax+meal_cost;
+        
+        Input:-
+        12.00
+        20
+        8
+        
+        O/P:- 15
+        */
