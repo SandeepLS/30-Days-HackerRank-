@@ -1,0 +1,45 @@
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+let inputString: string = '';
+let inputLines: string[] = [];
+let currentLine: number = 0;
+process.stdin.on('data', function(inputStdin: string): void {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function(): void {
+    inputLines = inputString.split('\n');
+    inputString = '';
+    main();
+});
+
+
+function readLine(): string | null {
+    if (currentLine >= inputLines.length) {
+        return null;
+    }
+    return inputLines[currentLine++];
+}
+
+function main() {
+    // Enter your code here
+   const i= 4;
+   const d = 4.0;
+   const s = "HackerRank ";
+   
+   //Declare second integer , double, string
+   const num:number = parseInt(readLine() || '0', 10);
+   const float:number = parseFloat(readLine() || '0.0');
+   const sentence:string = readLine() || '';
+   
+   /** '10': The parseInt function requires a second argument, which specifies the radix (or base) to use when parsing the string. In this case, 10 indicates that the string should be treated as a base-10 (decimal) number. */
+   
+   /**In the main function, we added || '0' and || '0.0' to the parseInt and parseFloat calls, respectively. This is to ensure that even if no input is provided, it will default to 0 for numbers. */
+   
+   console.log(i + num);
+   console.log((d + float).toFixed(1));
+   console.log(s + sentence);
+   
+}
