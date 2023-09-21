@@ -1,0 +1,41 @@
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+/**It sets up an event listener to handle incoming data on the standard input stream (stdin).  */
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+/** This line sets up an event listener for the standard input stream (stdin) of the Node.js process. The stdin is where you can read input from the user or from other sources. 'end' is the event name:  event is emitted by the stdin stream when it reaches the end of its input.  */
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+
+/**especially when dealing with input data that is split into lines.  */
+function readLine() {
+    return inputString[currentLine++];
+}
+
+
+// Write code here
+function main() {
+    const N = parseInt(readLine().trim(), 10);
+    if(N%2!=0){
+        console.log("Weird");
+    }else if(N <= 5){
+        console.log("Not Weird");
+    }else if(N <= 20){
+        console.log("Weird");
+    }
+    else{
+        console.log("Not Weird");
+    }
+}
