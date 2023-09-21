@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+# This is a conditional statement that checks whether the Python script is being executed as the main program. It's a built-in Python variable, 
+if __name__ == '__main__':
+    N = int(input().strip())
+    
+    if N%2 == 1:
+        print("Weird")
+    if N%2 ==0:
+        if N in range(2, 5):
+            print("Not Weird")
+        elif N in range(6, 20):
+            print("Weird")
+        elif N>20:
+            print("Not Weird")
+            
