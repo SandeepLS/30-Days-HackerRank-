@@ -1,0 +1,78 @@
+import java.io.*;
+import java.util.*;
+
+public class Person {
+    /*Write a Person class with an instance variable, , and a constructor that takes an integer, , as a parameter.
+    The constructor must assign  to  after confirming the argument passed as  is not negative; if a negative argument is passed as,
+    the constructor should set  to  and print Age is not valid, setting age to 0.. In addition, you must write the following*/      
+    private int age;    
+  
+    public Person(int initialAge) {
+        age = initialAge;       
+        if (age < 0) {
+            System.out.println("Age is not valid, setting age to 0.");
+            age = 0;
+        }
+    }
+
+    //amIOld() should perform the following conditional action
+    public void amIOld() {
+        if (age < 13) {
+            System.out.println("You are young.");
+        } else if (age >= 13 && age < 18) {
+            System.out.println("You are a teenager.");
+        } else {
+            System.out.println("You are old.");
+        }
+    }
+    
+    //yearPasses() should increase the  instance variable by .
+    public void yearPasses() {
+        age++;
+    }
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);// Create a Scanner object to read input from the console
+        int T = sc.nextInt();//Read an integer T, representing the number of test cases
+
+        for (int i = 0; i < T; i++) {
+            int age = sc.nextInt(); // Read an integer age from input
+            
+            // Create a new Person object p with the given age using the Person constructor
+            Person p = new Person(age);
+            
+            // Call the amIOld method of the Person object to determine and print the age category
+            p.amIOld();
+            
+             // Simulate three years passing by calling the yearPasses method three times
+            for (int j = 0; j < 3; j++) {
+                p.yearPasses();
+            }
+            
+            // Call the amIOld method again to print the updated age category
+            p.amIOld();
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+//Explain:Def
+/*Objects have states and behaviors.
+Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating.
+An object is an instance of a class.
+Object is a physical entity.
+Object is created through new keyword mainly e.g:-Student s1=new Student();
+	Object is created many times as per requirement.
+*/
+
+/*Class is a blueprint or template from which objects are created.
+Class is a logical entity.
+Class is declared using class keyword e.g.class Student{}
+Class is declared once.*/
+
+/*
+Class: Human Object: Man, Woman
+Class: Fruit Object: Apple, Banana, Mango, Guava wtc.
+*/
