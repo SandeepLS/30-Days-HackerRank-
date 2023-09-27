@@ -1,0 +1,64 @@
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+let inputString: string = '';
+let inputLines: string[] = [];
+let currentLine: number = 0;
+process.stdin.on('data', function(inputStdin: string): void {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function(): void {
+    inputLines = inputString.split('\n');
+    inputString = '';
+    main();
+});
+
+function readLine(): string {
+    return inputLines[currentLine++];
+}
+function main() {
+    // Enter your code here
+    console.log("Hello, World.")
+    console.log(readLine())
+}
+
+//Explain:-
+/**
+1) 'use strict';:
+'use strict'; is a directive that enforces a stricter set of rules in JavaScript,
+catching common coding mistakes and preventing the use of certain error-prone features.
+
+2)Input Handling:
+process.stdin.resume();: This line resumes reading from the standard input stream. By default,
+the standard input stream is paused, so you need to resume it to start reading input.
+process.stdin.setEncoding('utf-8');: This line sets the character encoding for the input stream to UTF-8.
+
+3)Data Accumulation:
+let inputString: string = '';: This initializes an empty string inputString, which will be used to accumulate the input data.
+let inputLines: string[] = [];: This initializes an empty string array inputLines, which will be used to store individual lines of input.
+let currentLine: number = 0;: This initializes a variable currentLine to keep track of the current line being read from inputLines.
+
+4)Event Listeners:
+process.stdin.on('data', function(inputStdin: string): void { inputString += inputStdin; });:
+This sets up an event listener for the "data" event on the standard input stream.
+Whenever data is available on the input stream (usually when you type or provide input), this event is triggered.
+The provided function appends the incoming data to the inputString.
+
+process.stdin.on('end', function(): void { inputLines = inputString.split('\n'); inputString = ''; main(); });:
+This sets up an event listener for the "end" event on the standard input stream. 
+The "end" event is triggered when there is no more data to read from the input stream, indicating that the input has finished. 
+When the "end" event occurs, it splits the accumulated input data inputString into individual lines and stores them in inputLines. 
+Then, it resets inputString to an empty string and calls the main() function, indicating that it's time to start processing the in
+
+5)readLine Function:
+function readLine(): string { return inputLines[currentLine++]; }: 
+This function returns the current line of input from the inputLines array and increments the currentLine index, 
+effectively moving to the next line of input.
+
+6)main Function:
+function main() { console.log("Hello, World."); console.log(readLine()); }: 
+This is the main function where you should write your code. In this example, it prints "Hello, World."
+to the console and then prints the first line of input using the readLine() function.
+*/
