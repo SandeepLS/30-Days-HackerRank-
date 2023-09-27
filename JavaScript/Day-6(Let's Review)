@@ -1,0 +1,37 @@
+function processData(input) {
+    //Enter your code here  
+    let inputLines = input.split('\n');
+    let test = parseInt(inputLines[0].trim(), 10);
+
+    for (let i = 1; i <= test; i++)
+    {
+        const a = inputLines[i];
+        let even = "";
+        let odd = "";
+        const char = a.split('');
+        for (let j = 0; j < char.length; j++)
+        {
+            if (j % 2 === 0)
+            {
+                even += char[j];
+            }
+            else
+            {
+                odd += char[j];
+            }
+        }
+        console.log(`${even} ${odd}`);
+    }
+    
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
