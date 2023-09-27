@@ -1,0 +1,42 @@
+function processData(inputString) {
+    // This line of code prints the first line of output
+    console.log("Hello, World.");
+    
+    // Write the second line of output that prints the contents of 'inputString' here.
+    console.log(inputString);
+}
+
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
+
+/**Explaination:-
+1) processData Function:
+function processData(inputString): This is a function that takes inputString as its parameter.
+console.log("Hello, World.");: This line of code prints "Hello, World." to the console, which is the first line of output.
+
+2)Input Handling:
+process.stdin.resume();: This line resumes reading from the standard input stream. By default, in many JavaScript environments,
+the standard input stream is paused, so you need to resume it to start reading input.
+process.stdin.setEncoding("ascii");: This line sets the character encoding for the input stream to ASCII.
+
+3) Data Accumulation:
+_input = "";: This initializes an empty string _input, which will be used to accumulate the input data.
+process.stdin.on("data", function (input) { _input += input; });: This sets up an event listener for the "data" event on the standard input stream.
+Whenever data is available on the input stream (usually when you type or provide input), this event is triggered.
+The provided function appends the incoming data to the _input string.
+
+4)Processing on "end" Event:
+process.stdin.on("end", function () { processData(_input); });: This sets up an event listener for the "end" event on the standard input stream.
+The "end" event is triggered when there is no more data to read from the input stream, indicating that the input has finished.
+When the "end" event occurs, it calls the processData function, passing the accumulated input data _input as an argument.
+This is where the main processing of the input occurs.
+*/
