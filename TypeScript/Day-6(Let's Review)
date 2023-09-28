@@ -1,0 +1,53 @@
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+let inputString: string = '';
+let inputLines: string[] = [];
+let currentLine: number = 0;
+process.stdin.on('data', function(inputStdin: string): void {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function(): void {
+    inputLines = inputString.split('\n');
+    inputString = '';
+    main();
+});
+
+function readLine(): any {
+    return inputLines[currentLine++];
+}
+
+function main() {
+    // Enter your code here
+    //Eimvi
+
+    let test:number = parseInt(readLine());
+    
+    for(let i=0;i<test;i++)
+    {
+        let a: string[]=[];
+        
+        let even:string = '';
+        let odd:string = '';
+        
+        a = Array.from(readLine());
+        
+        
+        for(let j=0;j<a.length;j++)
+        {
+            if(j%2==0)
+            {
+                even += a[j]
+            }
+            else
+            {
+                odd += a[j];
+            }
+        }
+        console.log(`${even} ${odd}`);
+        
+        
+    } 
+}
