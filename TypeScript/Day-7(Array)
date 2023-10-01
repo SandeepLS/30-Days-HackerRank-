@@ -35,3 +35,17 @@ function main() {
     }
 }
 
+/*
+const arr: number[] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+This line reads another line of input from the console using readLine().
+
+It then uses replace(/\s+$/g, '') to remove trailing whitespace from the input.
+The regular expression /\s+$/g matches one or more whitespace characters at the end of the string ($ signifies the end of the string, and \s+ matches one or more whitespace characters).
+After removing trailing whitespace, 
+
+it splits the remaining string into an array using spaces as the delimiter with .split(' ').
+
+Finally, it uses .map() to iterate over the elements of the resulting array and parses each element into an integer using parseInt().
+The resulting array of integers is stored in the variable arr, which is explicitly typed as an array of numbers.
+*/
+
