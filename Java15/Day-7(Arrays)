@@ -18,10 +18,10 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         
-        int size = scan.nextInt(); //4
-        int a[]= new int[size];
+        int size = scan.nextInt(); //4  //Declearning array
+        int a[]= new int[size];         //Creating array
         
-        for(int i=0;i<size;i++)
+        for(int i=0;i<size;i++)         //Initializing
         {
             a[i]=scan.nextInt(); //1234
         }
