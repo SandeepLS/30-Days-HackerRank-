@@ -1,0 +1,47 @@
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+let inputString: string = '';
+let inputLines: string[] = [];
+let currentLine: number = 0;
+process.stdin.on('data', function(inputStdin: string): void {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function(): void {
+    inputLines = inputString.split('\n');
+    inputString = '';
+    main();
+});
+
+function readLine(): string {
+    return inputLines[currentLine++];
+}
+
+function main() {
+    // Enter your code here
+    
+    const n:number = parseInt(readLine());
+    
+    const phoneBook = new Map();
+    
+    for(let i: number = 1;i <= n;i++)
+    {
+        const [name,phon]:string[] = inputLines[i].split(' ');
+        phoneBook.set(name,phon);
+    }
+    
+    for(let i: number=n+1;i<inputLines.length;i++)
+    {
+        const nameQuery:string = inputLines[i];
+        if(phoneBook.has(nameQuery))
+        {
+            console.log(`${nameQuery}=${phoneBook.get(nameQuery)}`);
+        }
+        else
+        {
+            console.log("Not found");
+        }
+    }
+}
