@@ -37,3 +37,29 @@ process.stdin.on("data", function (input) {
 process.stdin.on("end", function () {
    processData(_input);
 });
+
+
+
+/*
+Explaination:-
+function processData(input): This is the main function that processes the input data. It takes a single argument, input, which contains the input data provided through the standard input (e.g., when running the script interactively).
+
+const lines = input.split('\n'): This line splits the input text into an array of lines, with each line as an element in the lines array. This makes it easier to work with the individual lines of input.
+
+const n = parseInt(lines[0]): It extracts the first line of the input, which represents the number of entries in the phone book. This value is stored in the variable n.
+
+const phoneBook = new Map(): This creates a new Map object called phoneBook to store the phone book entries, where the keys are names (strings) and the values are phone numbers (also strings).
+
+The next loop reads and adds phone book entries:
+
+for (let i = 1; i <= n; i++): It loops through the lines starting from the second line (index 1) up to the n-th line (inclusive).
+const [name, number] = lines[i].split(' '): It splits the current line into two parts (name and number) based on a space (' ') separator. The destructuring assignment is used to assign these parts to the name and number variables.
+phoneBook.set(name, number): It adds the entry to the phoneBook Map, using the name as the key and the number as the associated value.
+The next loop processes queries and prints the results:
+
+for (let i = n + 1; i < lines.length; i++): It iterates over the lines from the n + 1-th line to the end of the input.
+const nameQuery = lines[i]: It extracts the name to be queried from the current line.
+if (phoneBook.has(nameQuery)): It checks if the phoneBook Map has an entry for the given nameQuery.
+If found, it prints the name and associated phone number using the console.log statement.
+If not found, it prints "Not found" using the console.log statement.
+*/
