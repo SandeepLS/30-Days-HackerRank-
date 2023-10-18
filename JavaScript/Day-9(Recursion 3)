@@ -54,3 +54,28 @@ function main() {
 
     ws.end();
 }
+
+
+-------------------------------------------------------------------------------------------
+/*
+Another Method:-
+function factorial(n) {
+
+    return (n <= 1) ? 1 : n * factorial(n - 1);
+
+}
+
+function main() {
+
+    const n = +(readLine());
+
+    var fact = factorial(n);
+
+    console.log(fact);
+		
+		// console.log(factorial(+(readLine())));
+		
+		// Optional One Liner
+    
+}
+*/
