@@ -1,0 +1,9 @@
+/*
+Multidimensional arrays:- are arrays of arrays with each element of the array holding the reference of other arrays.
+These are also known as Jagged Arrays. A multidimensional array is created by appending one set of square brackets ([]) per dimension.
+Syntax :
+        datatype [][] arrayrefvariable;
+        or 
+        datatype arrayrefvariable[][];
+
+*/
