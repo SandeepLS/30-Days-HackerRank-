@@ -13,6 +13,8 @@ int intArray[];    //declaring array
 intArray = new int[20];  // allocating memory to array
 OR 
 int[] intArray = new int[20]; // combining both statements in one
+
+Reffer:-https://www.geeksforgeeks.org/arrays-in-java/?ref=lbp
 */
 
 import java.io.*;
