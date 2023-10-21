@@ -1,5 +1,18 @@
 /*
 An array is an container object, that holds a fixed number of values of a single type.
+All arrays are dynamically allocated, and stored in consecutive memory location.
+
+One-dimentional array:-
+                        type var-name[];
+                        OR
+                        type[] var-name;
+
+Instantiating an Array in Java:- var-name = new type [size];
+Ex:-
+int intArray[];    //declaring array
+intArray = new int[20];  // allocating memory to array
+OR 
+int[] intArray = new int[20]; // combining both statements in one
 */
 
 import java.io.*;
