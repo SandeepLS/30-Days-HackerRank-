@@ -1,9 +1,14 @@
 /*
 Multidimensional arrays:- are arrays of arrays with each element of the array holding the reference of other arrays.
 These are also known as Jagged Arrays. A multidimensional array is created by appending one set of square brackets ([]) per dimension.
+Data in multidimensional arrays are stored in tabular form (in row major order). 
 Syntax :
         datatype [][] arrayrefvariable;
         or 
         datatype arrayrefvariable[][];
+
+Syntax:
+data_type[1st dimension][2nd dimension][]..[Nth dimension] array_name = new data_type[size1][size2]….[sizeN];
+Refference:-https://www.geeksforgeeks.org/multidimensional-arrays-in-java/?ref=lbp
 
 */
