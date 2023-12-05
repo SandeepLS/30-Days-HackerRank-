@@ -17,3 +17,27 @@ process.stdin.on("data", function (input) {
 process.stdin.on("end", function () {
    processData(_input);
 });
+
+----------------------------------------------Local Host------------------------------------------------
+create a file(Sample.js) in VS Code.
+Run:-node Sample.js
+
+Ex:-
+const readline = require('readline');
+
+// Create an interface to read from the command line
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Ask the user to enter something
+rl.question('Enter something: ', (userInput) => {
+
+    console.log('Hello, World');
+  // Print the user input
+  console.log('You entered:', userInput);
+
+  // Close the interface
+  rl.close();
+});
