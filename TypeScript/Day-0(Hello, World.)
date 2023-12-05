@@ -24,3 +24,28 @@ function main() {
     console.log("Hello, World.")
     console.log(readLine())
 }
+
+---------------------------------------------local host-------------------------------------
+First install the typescript package:- npm install @types/node --save-dev
+Install this package:- npm install typescript
+compile the code:- npx tsc Helloo.ts
+run the code:- node Helloo.js
+Ex:-
+import * as readline from 'readline';
+
+// Create an interface to read from the command line
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Ask the user to enter something
+rl.question('Enter something: ', (userInput: string) => {
+  // Print the user input
+  console.log("Hello, World");
+  console.log('You entered:', userInput);
+
+  // Close the interface
+  rl.close();
+});
+
