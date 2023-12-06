@@ -43,3 +43,39 @@ function main() {
    console.log(s + sentence);
    
 }
+
+--------------------------------------------1) Local Host--------------------------------------------------------
+import * as readline from 'readline';
+
+// Create interface for reading input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Function to read input with a prompt
+const promptInput = (prompt: string): Promise<string> => new Promise(resolve => rl.question(prompt, resolve));
+
+// Function to perform operations and print output
+const performOperations = async (): Promise<void> => {
+  // Read and parse input
+  let i: number = parseInt(await promptInput('Enter an integer: '), 10);
+  let d: number = parseFloat(await promptInput('Enter a double: '));
+  let s: string = await promptInput('Enter a string: ');
+
+  // Perform operations
+  let intSum: number = i + i;
+  let doubleSum: number = d + d;
+  let stringConcatenation: string = s + s;
+
+  // Print output
+  console.log(intSum);
+  console.log(doubleSum.toFixed(1));
+  console.log(stringConcatenation);
+
+  // Close the interface
+  rl.close();
+};
+
+// Call the function to start the program
+performOperations();
