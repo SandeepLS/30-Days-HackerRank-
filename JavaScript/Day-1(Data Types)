@@ -47,3 +47,92 @@ function main() {
     console.log(s + stringValue);
 
 }
+
+--------------------------------------------------1)Local Host-----------------------------------------------
+const readline = require('readline');
+
+// Create interface for reading input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Declare variables
+let i, d, s;
+
+// Read and parse input
+rl.question('Enter an integer: ', (intInput) => {
+  i = parseInt(intInput);
+
+  rl.question('Enter a double: ', (doubleInput) => {
+    d = parseFloat(doubleInput);
+
+    rl.question('Enter a string: ', (stringInput) => {
+      s = stringInput;
+
+      // Perform operations
+      let intSum = i + i;
+      let doubleSum = d + d;
+      let stringConcatenation = s + s;
+
+      // Print output
+      console.log(intSum);
+      console.log(doubleSum.toFixed(1));
+      console.log(stringConcatenation);
+
+      // Close the interface
+      rl.close();
+    });
+  });
+});
+---------------------------------2)Local Host(it reduse some code using async/await)---------------------------
+const readline = require('readline');
+
+// Create interface for reading input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Function to read input with a prompt
+const promptInput = (prompt) => new Promise(resolve => rl.question(prompt, resolve));
+
+// Function to perform operations and print output
+const performOperations = async () => {
+  // Read and parse input
+  i = parseInt(await promptInput('Enter an integer: '));
+  d = parseFloat(await promptInput('Enter a double: '));
+  s = await promptInput('Enter a string: ');
+
+  // Perform operations
+  let intSum = i + i;
+  let doubleSum = d + d;
+  let stringConcatenation = s + s;
+
+  // Print output
+  console.log(intSum);
+  console.log(doubleSum.toFixed(1));
+  console.log(stringConcatenation);
+
+  // Close the interface
+  rl.close();
+};
+
+// Call the function to start the program
+performOperations();
+-----------------------------------------------Above Code explination----------------------------------
+1)Import the readline module, which provides an interface for reading input from the console.
+
+2)Create a readline interface (rl) using createInterface method. This interface will be used to interact with the console.
+
+3)Define a function promptInput that takes a prompt as an argument and returns a promise. 
+The promise resolves when the user enters input. 
+This function is designed to work with await to make asynchronous input reading more convenient.
+
+4)Define an asynchronous function performOperations using async/await.
+
+5)Call the performOperations function to execute the program. 
+The program will prompt the user for input, perform the specified operations, and then print the results.
+
+By using async/await and a helper function for prompting input, the code becomes more concise and easier to understand. 
+It also takes advantage of the asynchronous nature of reading input in a non-blocking way.
